@@ -1,0 +1,16 @@
+def solution(routes):
+    
+    routes.sort(key = lambda x : x[1])
+    
+    answer = 1
+    prev_end = routes[0][1]
+    
+    for route in routes :
+        
+        start = route[0]
+        end = route[1]
+        if start > prev_end :
+            answer += 1
+            prev_end = end
+
+    return answer
